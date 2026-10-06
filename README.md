@@ -22,6 +22,35 @@ Additionally, critical emergency queries (such as active police arrest or domest
 
 ---
 
+## Output Demonstrations
+
+### 1. Offline Emergency Gate Response
+When an emergency query is detected (e.g., police arrest or custody), the system instantly displays rights and emergency helpline numbers without network latency:
+
+![Emergency Gate Response](docs/images/01_emergency_gate_output.png)
+
+### 2. Full Non-Emergency RAG Output (FIR Refusal & Timelines)
+For non-emergency queries, the system retrieves relevant statutory provisions, generates grounded responses, verifies citations, and renders calculated timeline tables:
+
+![Non-Emergency FIR Refusal Output](docs/images/04_non_emergency_fir_refusal_output.png)
+
+### 3. Data Ingestion, PII Redaction & Prompt Fencing
+Demonstrates noise cleaning, automatic redaction of phone numbers/PAN/email, and sandboxing evidence chunks to prevent prompt injection:
+
+![Ingestion, PII Redaction and Fencing](docs/images/02_ingest_pii_fencing_output.png)
+
+### 4. Grounding Verifier & Fail-Closed Abstain Fallback
+When generated quotes or figures cannot be verified against raw source text, the verifier rejects the output and renders a safe, raw statutory fallback:
+
+![Grounding Verifier Fail-Closed Output](docs/images/03_verifier_fail_closed_output.png)
+
+### 5. Emergency Gate Query Triage
+Demonstrates the local matcher distinguishing between emergency crises and non-emergency queries that require vector retrieval:
+
+![Emergency Gate Query Triage](docs/images/05_offline_gate_triage.png)
+
+---
+
 ## Primary Use Cases
 
 1. **Emergency Arrest & Custody Rights Guidance**
@@ -106,6 +135,13 @@ Legal-Rag-based-Assistant/
 ├── cli/
 │   ├── __init__.py
 │   └── render.py              # Rich terminal formatting & panel rendering
+├── docs/
+│   └── images/                # Output screenshots for README documentation
+│       ├── 01_emergency_gate_output.png
+│       ├── 02_ingest_pii_fencing_output.png
+│       ├── 03_verifier_fail_closed_output.png
+│       ├── 04_non_emergency_fir_refusal_output.png
+│       └── 05_offline_gate_triage.png
 ├── emergency/
 │   ├── __init__.py
 │   ├── emergency.yaml         # Offline emergency categories & helpline configuration
@@ -138,7 +174,8 @@ Legal-Rag-based-Assistant/
 ├── DISCLAIMER.md              # Formal legal disclaimer
 ├── pyproject.toml             # Package setup and dependencies
 ├── README.md                  # Project documentation
-└── run_demo.py                # Executable demonstration script
+├── run_demo.py                # Executable demonstration script
+└── run_full_demo.py           # Full system interactive demonstration script
 ```
 
 ---
@@ -182,29 +219,16 @@ Execute the test suite to verify module correctness:
 pytest
 ```
 
-### 2. Run the Interactive Demo
-Launch the demonstration script to inspect all system layers in action:
+### 2. Run System Overview Demo
+Launch the module overview script:
 ```bash
 python run_demo.py
 ```
 
-### 3. Python Integration Example
-You can import and execute individual components directly:
-
-```python
-from emergency.gate import EmergencyGate
-from cli.render import emergency_hit_to_response, render_response
-
-# Instantiate offline emergency gate
-gate = EmergencyGate()
-
-# Evaluate query
-query = "My brother was arrested by police"
-hit = gate.evaluate(query)
-
-if hit:
-    response = emergency_hit_to_response(hit, disclaimer="General legal info only.")
-    render_response(response)
+### 3. Run Full System Interactive Demo
+Launch the full interactive demo supporting both emergency and non-emergency queries:
+```bash
+python run_full_demo.py
 ```
 
 ---
