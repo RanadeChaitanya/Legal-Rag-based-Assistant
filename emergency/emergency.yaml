@@ -1,0 +1,52 @@
+# Offline emergency rules. No network needed. Keep helplines re-verified before each release.
+version: 1
+last_verified: "2026-10-06"
+helplines_verified: false   # numbers below are from general knowledge; confirm against official sources
+emergencies:
+  arrest_custody:
+    title: "Arrest / Police Custody"
+    keywords:
+      - "arrested"
+      - "arrest"
+      - "detained"
+      - "in custody"
+      - "police custody"
+      - "taken into custody"
+      - "picked up by police"
+      - "lockup"
+      - "lock-up"
+      - "lock up"
+      - "गिरफ्तार"
+      - "हिरासत"
+      - "लॉकअप"
+    rights:
+      - "You must be told the grounds of your arrest (Art. 22(1); BNSS s.47)."
+      - "A relative, friend or person you name must be informed of your arrest and where you are held (BNSS s.48)."
+      - "You have the right to consult a lawyer of your choice (Art. 22(1))."
+      - "You must be produced before a Magistrate within 24 hours of arrest, excluding travel time (Art. 22(2); BNSS s.58)."
+      - "You may ask to be medically examined (BNSS s.53)."
+      - "Practical: stay calm, note officers' names and badge numbers, and do not sign papers you have not read."
+    helplines:
+      - {name: "National Emergency (ERSS)", number: "112"}
+      - {name: "NALSA Free Legal Aid", number: "15100"}
+      - {name: "Women Helpline", number: "1091"}
+  domestic_violence:
+    title: "Domestic Violence"
+    keywords:
+      - "domestic violence"
+      - "husband beats me"
+      - "husband hits me"
+      - "beating me"
+      - "beats me"
+      - "threatening to kill me"
+      - "thrown me out of the house"
+      - "घरेलू हिंसा"
+    rights:
+      - "You can apply to a Magistrate for protection, residence and monetary relief orders under the PWDVA 2005 (ss.12, 18, 19, 20)."
+      - "You cannot be evicted from a shared household except by procedure established by law (PWDVA s.17)."
+      - "A Protection Officer can help you file an application (PWDVA s.9)."
+      - "If you are in immediate danger, call 112 first."
+    helplines:
+      - {name: "National Emergency (ERSS)", number: "112"}
+      - {name: "Women Helpline", number: "1091"}
+      - {name: "NALSA Free Legal Aid", number: "15100"}

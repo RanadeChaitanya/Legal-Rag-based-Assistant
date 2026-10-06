@@ -1,0 +1,2 @@
+LEGAL INFORMATION DISCLAIMER:
+This terminal system provides general legal information grounded strictly in consolidated Indian statutes and reported judicial decisions. It does NOT provide legal advice, representation, or formal legal opinions. In any active legal emergency, arrest, or litigation, immediately consult a qualified advocate enrolled with a Bar Council or contact the National Legal Services Authority (NALSA) free legal aid helpline at 15100 or Emergency Response Support System at 112.

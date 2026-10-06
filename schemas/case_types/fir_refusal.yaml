@@ -1,0 +1,25 @@
+case_type: fir_refusal
+display_name: "Police Refusal to Register FIR"
+pinned_provisions:
+  - ref: "bnss:sec_173"
+    title: "Information in cognizable cases and Zero FIR"
+  - ref: "bnss:sec_175"
+    title: "Police officer's power to investigate cognizable case"
+
+slots:
+  - id: written_complaint_given
+    question: "Did you submit a written complaint signed by you?"
+    type: boolean
+    impact: 9
+  - id: cognizable_offence
+    question: "Briefly, what happened? (This helps check whether the offence is cognizable.)"
+    type: string
+    impact: 9
+  - id: station_approached
+    question: "Which police station refused to record your information?"
+    type: string
+    impact: 8
+  - id: sent_to_sp
+    question: "Have you already sent your complaint in writing or by post to the Superintendent of Police?"
+    type: boolean
+    impact: 8

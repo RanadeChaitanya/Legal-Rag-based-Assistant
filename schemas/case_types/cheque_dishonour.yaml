@@ -1,0 +1,37 @@
+case_type: cheque_dishonour
+display_name: "Cheque Dishonour / Bounce (Section 138 NI Act)"
+pinned_provisions:
+  - ref: "ni:sec_138"
+    title: "Dishonour of cheque for insufficiency of funds"
+  - ref: "ni:sec_139"
+    title: "Presumption in favour of holder"
+  - ref: "ni:sec_141"
+    title: "Offences by companies"
+  - ref: "ni:sec_142"
+    title: "Cognizance of offences"
+
+slots:
+  - id: return_memo_date
+    question: "On what date did you receive the bank return memo (information of dishonour)?"
+    type: date
+    impact: 10
+  - id: notice_sent_date
+    question: "On what date did you send the demand notice to the drawer?"
+    type: date
+    impact: 10
+  - id: notice_received_date
+    question: "On what date was the demand notice received by the drawer?"
+    type: date
+    impact: 10
+  - id: cheque_date
+    question: "What is the date written on the cheque?"
+    type: date
+    impact: 8
+  - id: payment_made_after_notice
+    question: "Has the drawer paid the cheque amount after receiving the notice?"
+    type: boolean
+    impact: 8
+  - id: cheque_amount
+    question: "What is the face value amount of the dishonoured cheque?"
+    type: number
+    impact: 7

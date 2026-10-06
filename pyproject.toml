@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=64.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "legal-rag-assistant"
+version = "1.0.0"
+description = "Deterministic verifier-first terminal RAG assistant for Indian legal situations."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.110.0",
+    "uvicorn[standard]>=0.28.0",
+    "typer>=0.9.0",
+    "rich>=13.7.0",
+    "pydantic>=2.6.0",
+    "pydantic-settings>=2.2.0",
+    "pyyaml>=6.0.1",
+    "httpx>=0.27.0",
+    "lxml>=5.1.0",
+    "qdrant-client[fastembed]>=1.10.0",
+    "google-genai>=1.0.0",
+    "python-dotenv>=1.0.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0",
+]
+
+[project.scripts]
+legal-assistant = "cli.main:app"
+
+[tool.setuptools.packages.find]
+include = ["cli*", "emergency*", "ingest*", "schemas*", "server*"]
+
+[tool.setuptools.package-data]
+emergency = ["*.yaml"]
+schemas = ["*.yaml", "case_types/*.yaml", "crosswalk/*.yaml"]
+server = ["prompts/*.md"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

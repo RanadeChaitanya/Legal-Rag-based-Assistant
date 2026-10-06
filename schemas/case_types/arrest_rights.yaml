@@ -1,0 +1,41 @@
+case_type: arrest_rights
+display_name: "Arrest & Police Custody Rights"
+pinned_provisions:
+  - ref: "const:art_22"
+    title: "Protection against arrest and detention in certain cases"
+  - ref: "bnss:sec_35"
+    title: "When police may arrest without warrant"
+  - ref: "bnss:sec_47"
+    title: "Person arrested to be informed of grounds of arrest and of right to bail"
+  - ref: "bnss:sec_48"
+    title: "Obligation to inform a relative or friend about the arrest"
+  - ref: "bnss:sec_53"
+    title: "Examination of arrested person by medical officer"
+  - ref: "bnss:sec_57"
+    title: "Person arrested to be taken before Magistrate or officer in charge of police station"
+  - ref: "bnss:sec_58"
+    title: "Person arrested not to be detained more than twenty-four hours"
+  - ref: "bnss:sec_187"
+    title: "Procedure when investigation cannot be completed in twenty-four hours"
+
+slots:
+  - id: arrest_time
+    question: "When (date and time) were you or the person arrested or taken into custody?"
+    type: datetime
+    impact: 10
+  - id: produced_before_magistrate
+    question: "Has the person been produced before a Magistrate yet?"
+    type: boolean
+    impact: 10
+  - id: arrested_without_warrant
+    question: "Did the police show an arrest warrant?"
+    type: boolean
+    impact: 8
+  - id: grounds_communicated
+    question: "Were the grounds of arrest explained to the person?"
+    type: boolean
+    impact: 7
+  - id: family_informed
+    question: "Has a relative or friend been informed of the arrest?"
+    type: boolean
+    impact: 6

@@ -1,0 +1,25 @@
+case_type: domestic_violence
+display_name: "Domestic Violence & Shared Household Rights"
+pinned_provisions:
+  - ref: "pwdva:sec_12"
+    title: "Application to Magistrate for protection orders"
+  - ref: "pwdva:sec_17"
+    title: "Right to reside in a shared household"
+  - ref: "pwdva:sec_18"
+    title: "Protection orders"
+  - ref: "pwdva:sec_19"
+    title: "Residence orders"
+
+slots:
+  - id: living_together
+    question: "Are or were you living together in a shared household?"
+    type: boolean
+    impact: 10
+  - id: immediate_threat
+    question: "Is there an active threat of physical harm or eviction?"
+    type: boolean
+    impact: 10
+  - id: relationship_to_respondent
+    question: "What is your relationship to the person causing harm (spouse, partner, in-law, relative)?"
+    type: string
+    impact: 8
